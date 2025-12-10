@@ -1,0 +1,189 @@
+/* CSS Variables for Clean/Premium Theme */
+:root {
+    --primary-color: #2563ea; /* Modern Blue */
+    --secondary-color: #1e40af;
+    --text-color: #1f2937; /* Dark Gray */
+    --text-light: #6b7280; /* Gray */
+    --bg-color: #f9fafb; /* Off-white */
+    --sidebar-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --highlight-bg: #eff6ff;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --sidebar-width: 280px;
+    --spacing-unit: 1rem;
+    --radius: 8px;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none; /* Hidden on desktop */
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    padding: 2rem 0;
+    flex-shrink: 0;
+}
+
+.brand {
+    padding: 0 2rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.brand h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.brand p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav li a {
+    display: block;
+    padding: 0.75rem 2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar nav li a:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.sidebar nav li a.active {
+    background-color: var(--highlight-bg);
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: 4rem 10% 4rem 5rem;
+    max-width: 1200px;
+}
+
+section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem;
+    color: var(--text-color);
+}
+
+p, li {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.content-placeholder {
+    background-color: white;
+    border: 1px dashed var(--border-color);
+    padding: 2rem;
+    border-radius: var(--radius);
+    color: var(--text-light);
+    text-align: center;
+}
+
+footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        z-index: 50;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .content {
+        padding: 5rem 1.5rem 2rem;
+    }
+}
