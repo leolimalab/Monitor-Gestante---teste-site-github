@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitor Gestante - Guia de Gerenciamento do Projeto</title>
+    <title>Monitor Gestante - Guia do Projeto</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- CSS - Cache buster v3 -->
+    <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 
 <body>
@@ -30,280 +32,284 @@
         <aside class="sidebar">
             <div class="brand">
                 <h1>Monitor Gestante</h1>
-                <p>Guia do Projeto</p>
+                <p>Documentation</p>
             </div>
             <nav>
                 <ul>
                     <li><a href="#intro" class="active">Introdução</a></li>
-                    <li><a href="#visao-geral">1. Visão geral do fluxo</a></li>
-                    <li><a href="#organizacao-repo">2. Organização do repositório</a></li>
-                    <li><a href="#boas-praticas-git">3. Boas práticas de Git</a></li>
-                    <li><a href="#docs-sql">4. Documentação de SQL</a></li>
-                    <li><a href="#padroes-sql">5. Padrões de SQL</a></li>
-                    <li><a href="#repo-unico">6. Repositório único</a></li>
-                    <li><a href="#feedbacks">7. Feedbacks de usuários</a></li>
-                    <li><a href="#planejamento">8. Planejamento semanal</a></li>
-                    <li><a href="#validacao">9. Validação e qualidade</a></li>
-                    <li><a href="#releases">10. Releases</a></li>
-                    <li><a href="#exemplo-completo">11. Exemplo completo</a></li>
-                    <li><a href="#dicas-rapidas">12. Dicas rápidas</a></li>
-                    <li><a href="#ferramentas">13. Ferramentas úteis</a></li>
-                    <li><a href="#anexos">14. Anexos</a></li>
+                    <li><a href="#visao-geral">Visão geral do fluxo</a></li>
+                    <li><a href="#organizacao-repo">Organização do repositório</a></li>
+                    <li><a href="#boas-praticas-git">Boas práticas de Git</a></li>
+                    <li><a href="#docs-sql">Documentação de SQL</a></li>
+                    <li><a href="#padroes-sql">Padrões de SQL</a></li>
+                    <li><a href="#repo-unico">Repositório único</a></li>
+                    <li><a href="#feedbacks">Feedbacks de usuários</a></li>
+                    <li><a href="#planejamento">Planejamento semanal</a></li>
+                    <li><a href="#validacao">Validação e qualidade</a></li>
+                    <li><a href="#releases">Releases</a></li>
+                    <li><a href="#exemplo-completo">Exemplo completo</a></li>
+                    <li><a href="#dicas-rapidas">Dicas rápidas</a></li>
+                    <li><a href="#ferramentas">Ferramentas úteis</a></li>
+                    <li><a href="#anexos">Anexos</a></li>
                 </ul>
             </nav>
         </aside>
 
         <!-- Main Content -->
         <main class="content">
+            <div class="content-wrapper">
 
-            <section id="intro">
-                <h2>Guia de Gerenciamento do Projeto — Monitor Gestante</h2>
-                <p>Este guia organiza como trabalhamos em equipe para manter os SQLs, documentar mudanças, planejar
-                    tarefas e rastrear feedbacks.</p>
-                <h3>Objetivos</h3>
-                <ul>
-                    <li>Garantir que toda mudança em SQL ou PowerBI (Pbix) seja documentada e compreendida por todos.
-                    </li>
-                    <li>Centralizar o código com controle de versão no GitHub.</li>
-                    <li>Tornar feedbacks de usuários rastreáveis até as mudanças de código.</li>
-                    <li>Planejar prioridades semanais por pessoa, com transparência do status das tarefas.</li>
-                </ul>
-            </section>
+                <section id="intro">
+                    <h2>Guia de Gerenciamento do Projeto — Monitor Gestante</h2>
+                    <p>Este guia organiza como trabalhamos em equipe para manter os SQLs, documentar mudanças, planejar
+                        tarefas e rastrear feedbacks.</p>
+                    <h3>Objetivos</h3>
+                    <ul>
+                        <li>Garantir que toda mudança em SQL ou PowerBI (Pbix) seja documentada e compreendida por
+                            todos.</li>
+                        <li>Centralizar o código com controle de versão no GitHub.</li>
+                        <li>Tornar feedbacks de usuários rastreáveis até as mudanças de código.</li>
+                        <li>Planejar prioridades semanais por pessoa, com transparência do status das tarefas.</li>
+                    </ul>
+                </section>
 
-            <section id="visao-geral">
-                <h2>1. Visão geral do fluxo</h2>
-                <ul>
-                    <li><strong>Abrir um item (issue)</strong> no GitHub descrevendo a necessidade (ex.: feedback de
-                        usuário, melhoria, correção).</li>
-                    <li><strong>Criar uma branch</strong> a partir desse item e fazer as mudanças (SQL e documentação).
-                    </li>
-                    <li><strong>Abrir um Pull Request (PR)</strong> linkado ao item, preencher o checklist e pedir
-                        revisão.</li>
-                    <li><strong>Revisão</strong> por outra pessoa; ajustes se necessário; aprovar e fazer merge.</li>
-                    <li><strong>Atualizar dicionários/README;</strong> marcar o item como concluído (issue fechada
-                        automaticamente pelo PR).</li>
-                    <li>Incluir no planejamento semanal o que foi feito e o que será feito.</li>
-                </ul>
-            </section>
+                <section id="visao-geral">
+                    <h2>Visão geral do fluxo</h2>
+                    <ul>
+                        <li><strong>Abrir um item (issue)</strong> no GitHub descrevendo a necessidade (ex.: feedback de
+                            usuário, melhoria, correção).</li>
+                        <li><strong>Criar uma branch</strong> a partir desse item e fazer as mudanças (SQL e
+                            documentação).</li>
+                        <li><strong>Abrir um Pull Request (PR)</strong> linkado ao item, preencher o checklist e pedir
+                            revisão.</li>
+                        <li><strong>Revisão</strong> por outra pessoa; ajustes se necessário; aprovar e fazer merge.
+                        </li>
+                        <li><strong>Atualizar dicionários/README;</strong> marcar o item como concluído (issue fechada
+                            automaticamente pelo PR).</li>
+                        <li>Incluir no planejamento semanal o que foi feito e o que será feito.</li>
+                    </ul>
+                </section>
 
-            <section id="organizacao-repo">
-                <h2>2. Organização do repositório (GitHub)</h2>
-                <p><strong>Pastas principais</strong> (exemplo do que já temos):</p>
-                <ul>
-                    <li><code>SQL/</code> — consultas e procedimentos SQL.</li>
-                    <li><code>dashboard_gestacoes/</code> — consultas para camadas de BI/dbt.</li>
-                    <li><code>Schemas/</code> — definições de esquemas/TSV.</li>
-                    <li><code>documentacao/</code> — documentação de negócio (opcional).</li>
-                </ul>
-                <p><strong>Arquivos de referência já existentes:</strong> <code>dicionario_logica_master.md</code>,
-                    <code>dicionario_logica.md</code>, <code>Regra AAS.md</code>.</p>
-            </section>
+                <section id="organizacao-repo">
+                    <h2>Organização do repositório (GitHub)</h2>
+                    <p><strong>Pastas principais</strong> (exemplo do que já temos):</p>
+                    <ul>
+                        <li><code>SQL/</code> — consultas e procedimentos SQL.</li>
+                        <li><code>dashboard_gestacoes/</code> — consultas para camadas de BI/dbt.</li>
+                        <li><code>Schemas/</code> — definições de esquemas/TSV.</li>
+                        <li><code>documentacao/</code> — documentação de negócio (opcional).</li>
+                    </ul>
+                    <p><strong>Arquivos de referência já existentes:</strong> <code>dicionario_logica_master.md</code>,
+                        <code>dicionario_logica.md</code>, <code>Regra AAS.md</code>.</p>
+                </section>
 
-            <section id="boas-praticas-git">
-                <h2>3. Boas práticas de versionamento (Git)</h2>
-                <h3>Branches</h3>
-                <p>Crie uma branch por entrega usando a convenção:</p>
-                <ul>
-                    <li><code>feature/descricao-curta</code> para novas funcionalidades</li>
-                    <li><code>fix/correção-breve</code> para correções</li>
-                    <li><code>doc/atualizacao-docs</code> para documentação</li>
-                </ul>
-                <h3>Commits</h3>
-                <p>Mensagens curtas no imperativo, com contexto.</p>
-                <ul>
-                    <li>Ex.: <code>feat(sql): incluir CTE prenatal_risco_marcadores e regra AAS</code></li>
-                    <li>Ex.: <code>docs: atualizar dicionario_logica_master com nova regra AAS</code></li>
-                </ul>
-                <h3>Pull Requests (PR)</h3>
-                <p>Sempre abrir um PR para revisão, linkando o item (issue). No corpo do PR, usar “Closes #123” para
-                    fechar o item automaticamente quando o PR for mergeado.</p>
-                <p>Título claro. Ex.: <em>Regra AAS: incluir histórico de pré-eclâmpsia via pre_natal</em></p>
-            </section>
+                <section id="boas-praticas-git">
+                    <h2>Boas práticas de versionamento (Git)</h2>
+                    <h3>Branches</h3>
+                    <p>Crie uma branch por entrega usando a convenção:</p>
+                    <ul>
+                        <li><code>feature/descricao-curta</code> para novas funcionalidades</li>
+                        <li><code>fix/correção-breve</code> para correções</li>
+                        <li><code>doc/atualizacao-docs</code> para documentação</li>
+                    </ul>
+                    <h3>Commits</h3>
+                    <p>Mensagens curtas no imperativo, com contexto.</p>
+                    <ul>
+                        <li>Ex.: <code>feat(sql): incluir CTE prenatal_risco_marcadores e regra AAS</code></li>
+                        <li>Ex.: <code>docs: atualizar dicionario_logica_master com nova regra AAS</code></li>
+                    </ul>
+                    <h3>Pull Requests (PR)</h3>
+                    <p>Sempre abrir um PR para revisão, linkando o item (issue). No corpo do PR, usar “Closes #123” para
+                        fechar o item automaticamente quando o PR for mergeado.</p>
+                    <p>Título claro. Ex.: <em>Regra AAS: incluir histórico de pré-eclâmpsia via pre_natal</em></p>
+                </section>
 
-            <section id="docs-sql">
-                <h2>4. Documentação obrigatória para mudanças em SQL</h2>
-                <p>Sempre que alterar SQL:</p>
-                <ol>
-                    <li><strong>Atualize o dicionário de lógica:</strong> <code>dicionario_logica_master.md</code>
-                        (visão geral) e, quando aplicável, <code>dicionario_logica.md</code> (arquivo específico).</li>
-                    <li><strong>Descreva em linguagem simples:</strong>
-                        <ul>
-                            <li>O que mudou (critérios, CTEs, colunas novas/removidas)</li>
-                            <li>Por que mudou (motivação/feedback/regra clínica)</li>
-                            <li>Impacto esperado (campos, painéis, números)</li>
-                            <li>Como validar (consultas de verificação simples)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <h3>Modelo de seção para o dicionário (copie/cole):</h3>
-                <pre><code>#### Alteração: Regra AAS — inclusão dos marcadores do prontuário pre_natal
+                <section id="docs-sql">
+                    <h2>Documentação obrigatória para mudanças em SQL</h2>
+                    <p>Sempre que alterar SQL:</p>
+                    <ol>
+                        <li><strong>Atualize o dicionário de lógica:</strong> <code>dicionario_logica_master.md</code>
+                            (visão geral) e, quando aplicável, <code>dicionario_logica.md</code> (arquivo específico).
+                        </li>
+                        <li><strong>Descreva em linguagem simples:</strong>
+                            <ul>
+                                <li>O que mudou (critérios, CTEs, colunas novas/removidas)</li>
+                                <li>Por que mudou (motivação/feedback/regra clínica)</li>
+                                <li>Impacto esperado (campos, painéis, números)</li>
+                                <li>Como validar (consultas de verificação simples)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <h3>Modelo de seção para o dicionário (copie/cole):</h3>
+                    <pre><code>#### Alteração: Regra AAS — inclusão dos marcadores do prontuário pre_natal
 - O que mudou: adicionadas CTEs `obesidade_gestante` e `prenatal_risco_marcadores`; regra de indicação AAS ajustada.
 - Por que: refletir regras clínicas e feedback de usuários.
 - Impacto: campos `tem_indicacao_aas` e `adequacao_aas_pe` podem aumentar.
 - Validação: comparar contagem de gestações com indicação AAS antes/depois; verificar exemplos manuais (n>=5).</code></pre>
 
-                <h3>Checklist de PR para mudanças em SQL (copie/cole no PR):</h3>
-                <pre><code>- [ ] Issue vinculada (Closes #ID)
+                    <h3>Checklist de PR para mudanças em SQL (copie/cole no PR):</h3>
+                    <pre><code>- [ ] Issue vinculada (Closes #ID)
 - [ ] Dicionário atualizado (`dicionario_logica_master.md` e/ou `dicionario_logica.md`)
 - [ ] Query roda sem erro (dev)
 - [ ] Validação feita (breve descrição)
 - [ ] Impacto comunicado (se afeta painéis/relatórios)</code></pre>
-            </section>
+                </section>
 
-            <section id="padroes-sql">
-                <h2>5. Padrões simples de código SQL (para não-programadores)</h2>
-                <ul>
-                    <li>Letras maiúsculas para palavras-chave: <code>SELECT</code>, <code>FROM</code>,
-                        <code>WHERE</code>.</li>
-                    <li>Nome de colunas e CTEs em <code>snake_case</code> (minusculo_com_underscore).</li>
-                    <li>Evite <code>SELECT *</code> em entregas finais (liste as colunas).</li>
-                    <li>Use CTEs (<code>WITH nome_cte AS (...)</code>) para etapas lógicas (facilita leitura e revisão).
-                    </li>
-                    <li>Comente blocos importantes com frases curtas explicando a regra de negócio.</li>
-                    <li>Indente de forma consistente (não misture tabs e espaços).</li>
-                    <li>Teste incrementando: rode partes menores e cheque resultados parciais.</li>
-                </ul>
-                <h3>Exemplo curto de CTE com comentário:</h3>
-                <pre><code class="language-sql">-- CTE: marca gestações com obesidade (IMC > 30)
+                <section id="padroes-sql">
+                    <h2>Padrões simples de código SQL (para não-programadores)</h2>
+                    <ul>
+                        <li>Letras maiúsculas para palavras-chave: <code>SELECT</code>, <code>FROM</code>,
+                            <code>WHERE</code>.</li>
+                        <li>Nome de colunas e CTEs em <code>snake_case</code> (minusculo_com_underscore).</li>
+                        <li>Evite <code>SELECT *</code> em entregas finais (liste as colunas).</li>
+                        <li>Use CTEs (<code>WITH nome_cte AS (...)</code>) para etapas lógicas (facilita leitura e
+                            revisão).</li>
+                        <li>Comente blocos importantes com frases curtas explicando a regra de negócio.</li>
+                        <li>Indente de forma consistente (não misture tabs e espaços).</li>
+                        <li>Teste incrementando: rode partes menores e cheque resultados parciais.</li>
+                    </ul>
+                    <h3>Exemplo curto de CTE com comentário:</h3>
+                    <pre><code class="language-sql">-- CTE: marca gestações com obesidade (IMC > 30)
 obesidade_gestante AS (
   SELECT id_gestacao,
          MAX(CASE WHEN SAFE_CAST(imc_consulta AS FLOAT64) > 30 OR SAFE_CAST(imc_inicio AS FLOAT64) >= 30 THEN 1 ELSE 0 END) AS tem_obesidade
   FROM dataset.minha_fonte
   GROUP BY id_gestacao
 )</code></pre>
-            </section>
+                </section>
 
-            <section id="repo-unico">
-                <h2>6. Repositório único (GitHub) e rastreabilidade</h2>
-                <ul>
-                    <li>Use um repositório GitHub para todo o código e documentação.</li>
-                    <li>Ative “Issues” e “Projects” (Kanban) no repositório.</li>
-                    <li>Use labels (etiquetas) nas issues: <code>feedback</code>, <code>bug</code>,
-                        <code>melhoria</code>, <code>documentacao</code>, <code>prioridade-alta</code>.</li>
-                    <li>Vincule PRs às issues (escreva “Closes #ID” no PR).</li>
-                    <li>Use milestones (entregas por mês/gestão) quando fizer sentido.</li>
-                    <li>Considere configurar CODEOWNERS para revisão obrigatória de certos arquivos (ex.: SQL críticos).
-                    </li>
-                </ul>
-            </section>
+                <section id="repo-unico">
+                    <h2>Repositório único (GitHub) e rastreabilidade</h2>
+                    <ul>
+                        <li>Use um repositório GitHub para todo o código e documentação.</li>
+                        <li>Ative “Issues” e “Projects” (Kanban) no repositório.</li>
+                        <li>Use labels (etiquetas) nas issues: <code>feedback</code>, <code>bug</code>,
+                            <code>melhoria</code>, <code>documentacao</code>, <code>prioridade-alta</code>.</li>
+                        <li>Vincule PRs às issues (escreva “Closes #ID” no PR).</li>
+                        <li>Use milestones (entregas por mês/gestão) quando fizer sentido.</li>
+                        <li>Considere configurar CODEOWNERS para revisão obrigatória de certos arquivos (ex.: SQL
+                            críticos).</li>
+                    </ul>
+                </section>
 
-            <section id="feedbacks">
-                <h2>7. Feedbacks de usuários (rastreamento)</h2>
-                <p>Crie um template de issue “Feedback de usuário”. Exemplo:</p>
-                <div class="highlight-box">
-                    <p><strong>Título:</strong> [Feedback] Nome do módulo/relatório – resumo</p>
-                    <p><strong>Descrição:</strong> (o que foi percebido)<br>
-                        <strong>Contexto:</strong> (onde/quando)<br>
-                        <strong>Exemplos:</strong> (IDs de paciente/gestação, prints)<br>
-                        <strong>Severidade:</strong> (alta/média/baixa)<br>
-                        <strong>Sugestão do usuário:</strong> (opcional)<br>
-                        <strong>Responsável:</strong> (se houver)
-                    </p>
-                </div>
-                <p>Cada feedback vira uma issue. Priorize com labels e inclua no quadro do projeto. Quando a mudança for
-                    implementada, feche o feedback via PR (Closes #ID) e descreva o que foi feito.</p>
-            </section>
+                <section id="feedbacks">
+                    <h2>Feedbacks de usuários (rastreamento)</h2>
+                    <p>Crie um template de issue “Feedback de usuário”. Exemplo:</p>
+                    <div class="highlight-box">
+                        <p><strong>Título:</strong> [Feedback] Nome do módulo/relatório – resumo</p>
+                        <p><strong>Descrição:</strong> (o que foi percebido)<br>
+                            <strong>Contexto:</strong> (onde/quando)<br>
+                            <strong>Exemplos:</strong> (IDs de paciente/gestação, prints)<br>
+                            <strong>Severidade:</strong> (alta/média/baixa)<br>
+                            <strong>Sugestão do usuário:</strong> (opcional)<br>
+                            <strong>Responsável:</strong> (se houver)
+                        </p>
+                    </div>
+                    <p>Cada feedback vira uma issue. Priorize com labels e inclua no quadro do projeto. Quando a mudança
+                        for implementada, feche o feedback via PR (Closes #ID) e descreva o que foi feito.</p>
+                </section>
 
-            <section id="planejamento">
-                <h2>8. Planejamento semanal (prioridades por colaborador)</h2>
-                <ul>
-                    <li><strong>Crie um “Projeto”</strong> (GitHub Projects) com colunas: <em>A Fazer, Em Progresso, Em
-                            Revisão, Pronto</em>.</li>
-                    <li><strong>Reunião curta (30 min) no início da semana:</strong>
-                        <ul>
-                            <li>Cada pessoa escolhe 1–3 itens como prioridade da semana (WIP pequeno para foco).</li>
-                            <li>Itens grandes viram subtarefas (issues menores) com estimativa simples (P/M/G).</li>
-                            <li>Registre decisões no topo do board ou em um arquivo
-                                <code>planejamento/semana-AAAA-MM-DD.md</code>.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Revisão no fim da semana:</strong> O que foi entregue, bloqueios, lições aprendidas.
-                    </li>
-                </ul>
-                <h3>Modelo simples de plano semanal (opcional):</h3>
-                <pre><code>Semana: 2025-08-11
+                <section id="planejamento">
+                    <h2>Planejamento semanal (prioridades por colaborador)</h2>
+                    <ul>
+                        <li><strong>Crie um “Projeto”</strong> (GitHub Projects) com colunas: <em>A Fazer, Em Progresso,
+                                Em Revisão, Pronto</em>.</li>
+                        <li><strong>Reunião curta (30 min) no início da semana:</strong>
+                            <ul>
+                                <li>Cada pessoa escolhe 1–3 itens como prioridade da semana (WIP pequeno para foco).
+                                </li>
+                                <li>Itens grandes viram subtarefas (issues menores) com estimativa simples (P/M/G).</li>
+                                <li>Registre decisões no topo do board ou em um arquivo
+                                    <code>planejamento/semana-AAAA-MM-DD.md</code>.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Revisão no fim da semana:</strong> O que foi entregue, bloqueios, lições aprendidas.
+                        </li>
+                    </ul>
+                    <h3>Modelo simples de plano semanal (opcional):</h3>
+                    <pre><code>Semana: 2025-08-11
 Prioridades:
 - [Pessoa A] Ajustar regra AAS (Issue #123)
 - [Pessoa B] Documentar dicionário (Issue #128)
 - [Pessoa C] Validar consultas emergenciais (Issue #130)
 
 Riscos/Bloqueios: falta de acesso ao dataset X</code></pre>
-            </section>
+                </section>
 
-            <section id="validacao">
-                <h2>9. Validação e qualidade</h2>
-                <h3>Antes do PR:</h3>
-                <ul>
-                    <li><strong>Rode a consulta em ambiente de desenvolvimento</strong> (ex.: sandbox) e garanta que
-                        executa sem erro.</li>
-                    <li><strong>Faça uma verificação rápida:</strong> contagem de linhas, checar colunas novas, amostrar
-                        5–10 linhas relevantes.</li>
-                    <li>Quando a mudança altera um indicador: compare números antes/depois e descreva o resultado no PR
-                        (“Validação”).</li>
-                </ul>
-                <h3>Após merge:</h3>
-                <p>Se aplicável, execute a rotina de atualização ou agendamento.</p>
-            </section>
+                <section id="validacao">
+                    <h2>Validação e qualidade</h2>
+                    <h3>Antes do PR:</h3>
+                    <ul>
+                        <li><strong>Rode a consulta em ambiente de desenvolvimento</strong> (ex.: sandbox) e garanta que
+                            executa sem erro.</li>
+                        <li><strong>Faça uma verificação rápida:</strong> contagem de linhas, checar colunas novas,
+                            amostrar 5–10 linhas relevantes.</li>
+                        <li>Quando a mudança altera um indicador: compare números antes/depois e descreva o resultado no
+                            PR (“Validação”).</li>
+                    </ul>
+                    <h3>Após merge:</h3>
+                    <p>Se aplicável, execute a rotina de atualização ou agendamento.</p>
+                </section>
 
-            <section id="releases">
-                <h2>10. Releases (entregas)</h2>
-                <p><strong>Ciclo recomendado:</strong> semanal.</p>
-                <p>Na sexta-feira, gere uma tag de versão (ex.: <code>v2025-08-15</code>) e um “Release” no GitHub com
-                    notas:</p>
-                <ul>
-                    <li>Principais mudanças (link para PRs)</li>
-                    <li>Impactos para usuários</li>
-                    <li>Ações após release (se houver)</li>
-                </ul>
-            </section>
+                <section id="releases">
+                    <h2>Releases (entregas)</h2>
+                    <p><strong>Ciclo recomendado:</strong> semanal.</p>
+                    <p>Na sexta-feira, gere uma tag de versão (ex.: <code>v2025-08-15</code>) e um “Release” no GitHub
+                        com notas:</p>
+                    <ul>
+                        <li>Principais mudanças (link para PRs)</li>
+                        <li>Impactos para usuários</li>
+                        <li>Ações após release (se houver)</li>
+                    </ul>
+                </section>
 
-            <section id="exemplo-completo">
-                <h2>11. Exemplo completo (passo a passo)</h2>
-                <p><strong>Cenário:</strong> “Incluir histórico de pré-eclâmpsia (pre_natal) na regra AAS”.</p>
-                <ol>
-                    <li><strong>Abrir issue</strong> (template de feedback ou melhoria) e marcar labels
-                        <code>melhoria</code>, <code>prioridade-alta</code>.</li>
-                    <li><strong>Criar branch:</strong> <code>feature/regra-aas-pre-natal</code>.</li>
-                    <li><strong>Editar SQL:</strong> adicionar CTE e ajustar regra; testar em sandbox.</li>
-                    <li><strong>Atualizar dicionario_logica_master.md</strong> com o que mudou, por quê, impacto e
-                        validação.</li>
-                    <li><strong>Abrir PR:</strong> título claro, descrição com “Closes #ID”, colar checklist e
-                        preencher.</li>
-                    <li><strong>Pedir revisão</strong> a alguém (marcar revisores). Ajustar se necessário.</li>
-                    <li>Após aprovação, <strong>mergear</strong>; release semanal incluirá essa mudança.</li>
-                </ol>
-            </section>
+                <section id="exemplo-completo">
+                    <h2>Exemplo completo (passo a passo)</h2>
+                    <p><strong>Cenário:</strong> “Incluir histórico de pré-eclâmpsia (pre_natal) na regra AAS”.</p>
+                    <ol>
+                        <li><strong>Abrir issue</strong> (template de feedback ou melhoria) e marcar labels
+                            <code>melhoria</code>, <code>prioridade-alta</code>.</li>
+                        <li><strong>Criar branch:</strong> <code>feature/regra-aas-pre-natal</code>.</li>
+                        <li><strong>Editar SQL:</strong> adicionar CTE e ajustar regra; testar em sandbox.</li>
+                        <li><strong>Atualizar dicionario_logica_master.md</strong> com o que mudou, por quê, impacto e
+                            validação.</li>
+                        <li><strong>Abrir PR:</strong> título claro, descrição com “Closes #ID”, colar checklist e
+                            preencher.</li>
+                        <li><strong>Pedir revisão</strong> a alguém (marcar revisores). Ajustar se necessário.</li>
+                        <li>Após aprovação, <strong>mergear</strong>; release semanal incluirá essa mudança.</li>
+                    </ol>
+                </section>
 
-            <section id="dicas-rapidas">
-                <h2>12. Dicas rápidas para quem não programa</h2>
-                <ul>
-                    <li>Trabalhe sempre em uma branch (evita conflitos).</li>
-                    <li>Escreva “o que” e “por que” no PR. Evite termos técnicos sem explicação.</li>
-                    <li>Se tiver dúvida, coloque um comentário no PR marcando a pessoa (@nome).</li>
-                    <li>Prefira mudanças pequenas e frequentes a grandes pacotes raros.</li>
-                </ul>
-            </section>
+                <section id="dicas-rapidas">
+                    <h2>Dicas rápidas para quem não programa</h2>
+                    <ul>
+                        <li>Trabalhe sempre em uma branch (evita conflitos).</li>
+                        <li>Escreva “o que” e “por que” no PR. Evite termos técnicos sem explicação.</li>
+                        <li>Se tiver dúvida, coloque um comentário no PR marcando a pessoa (@nome).</li>
+                        <li>Prefira mudanças pequenas e frequentes a grandes pacotes raros.</li>
+                    </ul>
+                </section>
 
-            <section id="ferramentas">
-                <h2>13. Ferramentas úteis (opcionais)</h2>
-                <ul>
-                    <li>GitHub Projects (Kanban) para planejamento.</li>
-                    <li>Templates de Issue/PR (pasta <code>.github/ISSUE_TEMPLATE</code> e
-                        <code>.github/pull_request_template.md</code>).</li>
-                    <li>GitHub Actions para validações automáticas (ex.: lint básico de SQL com sqlfluff).</li>
-                    <li>CODEOWNERS para revisão automática de arquivos críticos.</li>
-                </ul>
-            </section>
+                <section id="ferramentas">
+                    <h2>Ferramentas úteis (opcionais)</h2>
+                    <ul>
+                        <li>GitHub Projects (Kanban) para planejamento.</li>
+                        <li>Templates de Issue/PR (pasta <code>.github/ISSUE_TEMPLATE</code> e
+                            <code>.github/pull_request_template.md</code>).</li>
+                        <li>GitHub Actions para validações automáticas (ex.: lint básico de SQL com sqlfluff).</li>
+                        <li>CODEOWNERS para revisão automática de arquivos críticos.</li>
+                    </ul>
+                </section>
 
-            <section id="anexos">
-                <h2>14. Anexo: modelos prontos</h2>
-                <h3>Modelo de Commit</h3>
-                <pre><code>feat(sql): ajustar regra AAS com marcadores pre_natal
+                <section id="anexos">
+                    <h2>Anexos</h2>
+                    <h3>Modelo de Commit</h3>
+                    <pre><code>feat(sql): ajustar regra AAS com marcadores pre_natal
 
 docs: atualizar dicionario_logica_master com nova regra</code></pre>
 
-                <h3>Modelo de Pull Request</h3>
-                <pre><code>Título: Regra AAS — integração com pre_natal (Closes #123)
+                    <h3>Modelo de Pull Request</h3>
+                    <pre><code>Título: Regra AAS — integração com pre_natal (Closes #123)
 
 O que mudou:
 - Adicionadas CTEs X e Y
@@ -321,20 +327,20 @@ Checklist:
 - [ ] Validação descrita
 - [ ] Sem erros de execução</code></pre>
 
-                <h3>Modelo de Issue (Feedback de usuário)</h3>
-                <pre><code>Título: [Feedback] Linha do tempo — campo tem_indicacao_aas
+                    <h3>Modelo de Issue (Feedback de usuário)</h3>
+                    <pre><code>Título: [Feedback] Linha do tempo — campo tem_indicacao_aas
 
 Descrição: Usuários relataram que casos com pré-eclâmpsia prévia não eram sinalizados.
 Contexto: Reunião 05/08 com equipe X.
 Exemplos: CPF ****, gestação ID ****.
 Severidade: alta
 Sugestão: Considerar prontuário pre_natal.</code></pre>
-            </section>
+                </section>
 
-            <footer>
-                <p>&copy; 2025 Monitor Gestante. Documentação Interna.</p>
-            </footer>
-
+                <footer>
+                    <p>&copy; 2025 Monitor Gestante. Documentação Interna.</p>
+                </footer>
+            </div>
         </main>
     </div>
 
